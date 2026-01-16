@@ -1,55 +1,80 @@
+'use client';
+
+import Image from 'next/image';
 import { PROJECTS } from '../constants';
+import { useState } from 'react';
+import { ArrowLeft, ArrowRight } from 'lucide-react';
 
 export default function ProjectsPage() {
+    const [activeIndex, setActiveIndex] = useState(0);
+    const project = PROJECTS[activeIndex];
+
     return (
-        <section className="space-y-6">
-            <h1 className="text-3xl font-bold">Projects</h1>
+        <div className="projects-container">
+            <div className="project-card">
+                <div className="project-details">
+                    <div className="project-title">{project.title}</div>
 
-            {PROJECTS.map((project, index) => (
-                <div key={index} className="rounded-lg border p-6 space-y-4">
-                    <h2 className="text-xl font-semibold">{project.title}</h2>
+                    <div className="project-description">
+                        {project.description}
+                    </div>
 
-                    <p className="text-gray-700">{project.description}</p>
-
-                    <div className="flex flex-wrap gap-2">
-                        {project.technologies.map((tech, idx) => (
-                            <span
-                                key={idx}
-                                className="text-sm px-2 py-1 rounded"
-                            >
-                                {tech}
-                            </span>
+                    <div className="project-skills">
+                        {project.skills.map((skill, idx) => (
+                            <div key={idx} className="skill neuro">
+                                {skill}
+                            </div>
                         ))}
                     </div>
 
-                    <ul className="list-disc pl-5 text-gray-600 space-y-1">
-                        {project.highlights.map((point, idx) => (
-                            <li key={idx}>{point}</li>
-                        ))}
-                    </ul>
-
-                    <div className="flex gap-4 pt-2">
+                    <div className="project-links">
                         {project.github && (
                             <a
                                 href={project.github}
                                 target="_blank"
-                                className="text-blue-600 hover:underline"
+                                className="neon"
                             >
                                 GitHub
                             </a>
                         )}
+
                         {project.live && (
                             <a
                                 href={project.live}
                                 target="_blank"
-                                className="text-blue-600 hover:underline"
+                                className="neon"
                             >
                                 Live Demo
                             </a>
                         )}
                     </div>
                 </div>
-            ))}
-        </section>
+
+                <div className="project-thumbnail">
+                    <Image
+                        src={project.thumbnail}
+                        alt="Project thumbnail"
+                        width={400}
+                        height={250}
+                    />
+                </div>
+            </div>
+
+            <div className="project-pagination">
+                <button
+                    onClick={() => setActiveIndex((prev) => prev - 1)}
+                    disabled={activeIndex === 0}
+                >
+                    <ArrowLeft size={24} />
+                </button>
+
+                <button
+                    onClick={() => setActiveIndex((prev) => prev + 1)}
+                    disabled={activeIndex === PROJECTS.length - 1}
+                >
+                    <ArrowRight size={24} />
+                </button>
+            </div>
+        </div>
     );
 }
