@@ -1,28 +1,28 @@
 export const ABOUT = {
     name: 'Indra Kumar R',
-    role: 'Full-stack Software Engineer',
-    location: 'Bengaluru, India',
+    role: 'Software Development Engineer',
     summary:
-        'Full-stack Software Engineer with experience across Angular, Go, Node.js, Express.js and MongoDB, delivering scalable features for AI-native platforms. Skilled in frontend architecture, microservices development, third-party integrations, and optimizing engineering workflows. Committed to writing clean code and building reliable systems that solve real user and business problems.',
+        'Experience in building, delivering scalable features for AI-native platforms. Skilled in frontend architecture, backend development, third-party integrations, and optimizing engineering workflows. Committed to writing clean code and building reliable systems that solve real user and business problems.',
     socials: {
         linkedin: 'https://www.linkedin.com/in/indra-kumar-r/',
         github: 'https://github.com/indra-kumar-r',
+    },
+    contact: {
         email: 'indra07kumar@gmail.com',
         phone: '+91-6361702830',
+        location: 'Bengaluru, India',
     },
 };
 
 export const SKILLS = [
     'Angular',
-    'React',
     'Golang',
     'Node.js',
     'Express.js',
     'MongoDB',
-    'Redis',
     'TypeScript',
     'JavaScript',
-    'HTML & CSS',
+    'Web Development',
 ];
 
 export const WORK = [
@@ -61,7 +61,7 @@ export const PROJECTS = [
         title: 'LinkedIn Profile Scraper App',
         description:
             'A full-stack tool for executing Boolean search queries on LinkedIn profiles with exportable results.',
-        technologies: ['Go', 'Angular', 'MongoDB', 'SerpAPI'],
+        skills: ['Go', 'Angular', 'MongoDB', 'SerpAPI'],
         highlights: [
             'Built a modular microservices backend with SerpAPI integration.',
             'Designed a user-friendly UI supporting multi-user accounts.',
@@ -69,12 +69,14 @@ export const PROJECTS = [
         ],
         github: 'https://github.com/indra-kumar-r/LinkedIn-Profile-Scraper-App',
         live: '',
+        thumbnail:
+            'https://images.pexels.com/photos/34613733/pexels-photo-34613733.jpeg',
     },
     {
         title: 'Invoice Web App',
         description:
             'A web-based invoice management system to streamline invoice creation and client management.',
-        technologies: ['Angular', 'Node.js', 'Express.js', 'MongoDB', 'Redis'],
+        skills: ['Angular', 'Node.js', 'Express.js', 'MongoDB', 'Redis'],
         highlights: [
             'Implemented persistent invoice and client data storage.',
             'Built intuitive UI for managing invoices and clients.',
@@ -82,15 +84,27 @@ export const PROJECTS = [
         ],
         github: 'https://github.com/indra-kumar-r/Invoice-WebApp',
         live: '',
+        thumbnail:
+            'https://images.pexels.com/photos/29678804/pexels-photo-29678804.jpeg',
     },
 ];
 
-export const EDUCATION = [
+export const NAV_TABS = [
     {
-        institution: 'Alliance College of Engineering and Design',
-        degree: 'B.Tech in Computer Science Engineering',
-        location: 'Bengaluru, Karnataka',
-        from: '2020',
-        to: '2024',
+        name: 'Work',
+        href: '/work',
+    },
+    {
+        name: 'About',
+        href: '/',
+    },
+    {
+        name: 'Projects',
+        href: '/projects',
     },
 ];
+
+export type GlowingTextProps = {
+    text: string;
+    className?: string;
+};

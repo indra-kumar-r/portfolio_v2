@@ -1,15 +1,29 @@
 'use client';
 
+import '../globals.css';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+import { NAV_TABS } from '../constants';
 
 export default function Navbar() {
+    const pathname = usePathname();
+
     return (
-        <nav className="border-b">
-            <div className="max-w-4xl mx-auto flex gap-6 p-4">
-                <Link href="/">Home</Link>
-                <Link href="/work">Work</Link>
-                <Link href="/projects">Projects</Link>
-                <Link href="/education">Education</Link>
+        <nav className="navbar-container">
+            <div className="tabs">
+                {NAV_TABS.map((tab) => {
+                    const isActive = pathname === tab.href;
+
+                    return (
+                        <Link
+                            key={tab.name}
+                            href={tab.href}
+                            className={`tab ${isActive ? 'active' : ''}`}
+                        >
+                            {tab.name}
+                        </Link>
+                    );
+                })}
             </div>
         </nav>
     );

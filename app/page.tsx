@@ -1,58 +1,67 @@
+'use client';
+
+import { Linkedin, Github, MapPin, Mail, Phone } from 'lucide-react';
 import { ABOUT, SKILLS } from './constants';
 
 export default function Home() {
+    function copyToClipboard(): void {
+        navigator.clipboard.writeText(ABOUT.contact.email);
+    }
+
     return (
-        <section className="space-y-10">
-            <div className="space-y-3">
-                <h1 className="text-3xl font-bold">{ABOUT.name}</h1>
+        <div className="home-container">
+            <div className="about-section">
+                <div className="title">{ABOUT.name}</div>
 
-                <p className="text-lg text-gray-700">{ABOUT.role}</p>
+                <div className="summary">
+                    <div className="role">{ABOUT.role}</div>
 
-                <p className="text-gray-600">{ABOUT.summary}</p>
-
-                <p className="text-sm text-gray-500">{ABOUT.location}</p>
-
-                <div className="flex gap-4 pt-2">
-                    {ABOUT.socials.github && (
-                        <a
-                            href={ABOUT.socials.github}
-                            target="_blank"
-                            className="text-blue-600 hover:underline"
-                        >
-                            GitHub
-                        </a>
-                    )}
-                    {ABOUT.socials.linkedin && (
-                        <a
-                            href={ABOUT.socials.linkedin}
-                            target="_blank"
-                            className="text-blue-600 hover:underline"
-                        >
-                            LinkedIn
-                        </a>
-                    )}
-                    {ABOUT.socials.email && (
-                        <a
-                            href={ABOUT.socials.email}
-                            className="text-blue-600 hover:underline"
-                        >
-                            Email
-                        </a>
-                    )}
+                    {ABOUT.summary}
                 </div>
             </div>
 
-            <div className="space-y-3">
-                <h2 className="text-2xl font-semibold">Skills</h2>
+            <div className="skills-section">
+                {SKILLS.map((skill, index) => (
+                    <div key={index} className="skill">
+                        {skill}
+                    </div>
+                ))}
+            </div>
 
-                <div className="flex flex-wrap gap-2">
-                    {SKILLS.map((skill, index) => (
-                        <span key={index} className="text-sm px-3 py-1 rounded">
-                            {skill}
-                        </span>
-                    ))}
+            <div className="socials-section">
+                <div className="socials">
+                    <a href={ABOUT.socials.linkedin} target="_blank">
+                        <Linkedin size={20} />
+                        LinkedIn
+                    </a>
+
+                    <a
+                        href={ABOUT.socials.github}
+                        target="_blank"
+                        className="sound-btn"
+                    >
+                        <Github size={20} />
+                        GitHub
+                    </a>
+                </div>
+
+                <div className="contacts">
+                    <button className="contact">
+                        <Phone size={16} />
+                        <span>{ABOUT.contact.phone}</span>
+                    </button>
+
+                    <button className="contact mail" onClick={copyToClipboard}>
+                        <Mail size={16} /> <span>{ABOUT.contact.email}</span>
+                        <div className="line"></div>
+                    </button>
+
+                    <button className="contact">
+                        <MapPin size={16} />
+                        <span>{ABOUT.contact.location}</span>
+                    </button>
                 </div>
             </div>
-        </section>
+        </div>
     );
 }
