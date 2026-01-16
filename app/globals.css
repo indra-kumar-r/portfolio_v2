@@ -33,6 +33,11 @@
 }
 
 body {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    gap: 8px;
     background: var(--background);
     color: var(--foreground);
     font-family: Arial, Helvetica, sans-serif;
@@ -97,8 +102,9 @@ body {
     height: 90%;
     display: flex;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: flex-start;
     flex-direction: column;
+    overflow: auto;
 
     .about-section {
         width: 100%;
@@ -381,36 +387,79 @@ body {
         }
     }
 
-    .project-pagination {
+    .navigation-right {
         position: absolute;
         display: flex;
+        gap: 42px;
+        top: 50%;
+        left: 5%;
+        transform: translateX(-50%);
+    }
+
+    .navigation-left {
+        position: absolute;
+        display: flex;
+        gap: 42px;
+        top: 50%;
+        right: 2.5%;
+        transform: translateX(-50%);
+    }
+
+    .navigation-btns {
+        position: absolute;
+        display: flex;
+        display: none;
         gap: 42px;
         margin-top: 42px;
         bottom: 2.5%;
         left: 50%;
         transform: translateX(-50%);
+    }
 
-        button {
-            width: 42px;
-            height: 42px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+    .navigation-btn {
+        width: 42px;
+        height: 42px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+        background: lime;
+        box-shadow: 0 0 12px lime;
+
+        &:hover {
+            transform: scale(1.05);
+        }
+
+        &:disabled {
+            display: none;
+        }
+    }
+
+    .counter-section {
+        position: absolute;
+        display: flex;
+        gap: 12px;
+        margin-top: 42px;
+        bottom: 2.5%;
+        left: 50%;
+        transform: translateX(-50%);
+
+        .counter {
+            width: 12px;
+            height: 12px;
             border-radius: 50%;
-            border: none;
-            outline: none;
-            cursor: pointer;
-            transition: all 0.3s ease-in-out;
-            background: lime;
-            box-shadow: 0 0 12px lime;
+            border: 1px solid white;
+            background: black;
+            box-shadow: 0 0 4px white;
+            transition: all 0.5s ease-in-out;
 
-            &:hover {
-                transform: scale(1.05);
-            }
-
-            &:disabled {
-                opacity: 0.75;
-                cursor: not-allowed;
+            &.active {
+                background-color: white;
+                box-shadow: 0 0 8px white;
             }
         }
     }

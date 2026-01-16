@@ -60,8 +60,29 @@ export default function ProjectsPage() {
                 </div>
             </div>
 
-            <div className="project-pagination">
+            <div className="navigation-left">
                 <button
+                    className="navigation-btn"
+                    onClick={() => setActiveIndex((prev) => prev + 1)}
+                    disabled={activeIndex === PROJECTS.length - 1}
+                >
+                    <ArrowRight size={24} />
+                </button>
+            </div>
+
+            <div className="navigation-right">
+                <button
+                    className="navigation-btn"
+                    onClick={() => setActiveIndex((prev) => prev - 1)}
+                    disabled={activeIndex === 0}
+                >
+                    <ArrowLeft size={24} />
+                </button>
+            </div>
+
+            <div className="navigation-btns">
+                <button
+                    className="navigation-btn"
                     onClick={() => setActiveIndex((prev) => prev - 1)}
                     disabled={activeIndex === 0}
                 >
@@ -69,11 +90,23 @@ export default function ProjectsPage() {
                 </button>
 
                 <button
+                    className="navigation-btn"
                     onClick={() => setActiveIndex((prev) => prev + 1)}
                     disabled={activeIndex === PROJECTS.length - 1}
                 >
                     <ArrowRight size={24} />
                 </button>
+            </div>
+
+            <div className="counter-section">
+                {PROJECTS.map((_, index) => (
+                    <div
+                        key={index}
+                        className={`counter ${
+                            index === activeIndex ? 'active' : ''
+                        }`}
+                    />
+                ))}
             </div>
         </div>
     );
