@@ -6,6 +6,7 @@ export const ABOUT = {
     socials: {
         linkedin: 'https://www.linkedin.com/in/indra-kumar-r/',
         github: 'https://github.com/indra-kumar-r',
+        resume: 'https://drive.google.com/file/d/1BfHWFxOJuUw6GthluoX-lRG7v5NzcAtE/view',
     },
     contact: {
         email: 'indra07kumar@gmail.com',
@@ -106,7 +107,6 @@ export const NAV_TABS = [
     },
 ];
 
-export type GlowingTextProps = {
-    text: string;
-    className?: string;
+export const VERSION = {
+    version: 'v1.0.1',
 };

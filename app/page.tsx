@@ -1,6 +1,6 @@
 'use client';
 
-import { Linkedin, Github, MapPin, Mail, Phone } from 'lucide-react';
+import { Linkedin, Github, MapPin, Mail, Phone, Link } from 'lucide-react';
 import { ABOUT, SKILLS } from './constants';
 
 export default function Home() {
@@ -33,6 +33,11 @@ export default function Home() {
                     <a href={ABOUT.socials.linkedin} target="_blank">
                         <Linkedin size={20} />
                         LinkedIn
+                    </a>
+
+                    <a href={ABOUT.socials.resume} target="_blank">
+                        <Link size={20} />
+                        Resume
                     </a>
 
                     <a
