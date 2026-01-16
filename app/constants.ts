@@ -28,6 +28,7 @@ export const SKILLS = [
 export const WORK = [
     {
         company: 'Geektrust',
+        link: 'https://www.linkedin.com/company/geektrust/',
         role: 'Software Development Engineer',
         location: 'Bengaluru, India',
         from: 'July 2024',
@@ -43,6 +44,7 @@ export const WORK = [
     },
     {
         company: 'ERAM Power Electronics',
+        link: 'https://www.linkedin.com/company/eram-power-electronics-company/',
         role: 'Software Development Engineer Intern',
         location: 'Bengaluru, India',
         from: 'Nov 2023',

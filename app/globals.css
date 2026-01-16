@@ -280,6 +280,186 @@ body {
     }
 }
 
+.work-container {
+    width: 100%;
+    height: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+
+    .jobs-section {
+        width: 40%;
+        height: 50%;
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+        flex-direction: column;
+        gap: 42px;
+
+        .job-option {
+            display: flex;
+            align-items: flex-start;
+            justify-content: flex-start;
+            flex-direction: column;
+            gap: 4px;
+            padding: 12px 24px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+            border: 2px solid transparent;
+            border-left: 2px solid gray;
+
+            .job-role {
+                font-size: medium;
+                font-weight: bold;
+            }
+
+            .job-details {
+                display: flex;
+                gap: 12px;
+                font-size: 10px;
+                font-weight: bold;
+                color: gray;
+                text-transform: uppercase;
+            }
+
+            &:hover {
+                border-left: 4px solid white;
+                transform: translateX(5px);
+            }
+
+            &.active {
+                background-color: rgba(211, 211, 211, 0.2);
+                border-left: 4px solid lime;
+            }
+        }
+    }
+
+    .job-details-section {
+        width: 60%;
+        height: 90%;
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+        flex-direction: column;
+        gap: 24px;
+        padding: 24px 48px;
+        overflow: auto;
+
+        .job-section {
+            width: 100%;
+            min-height: 100%;
+            display: flex;
+            align-items: flex-start;
+            justify-content: flex-start;
+            flex-direction: column;
+            gap: 24px;
+
+            .basic-section {
+                width: 100%;
+                display: flex;
+                align-items: flex-start;
+                justify-content: flex-start;
+                flex-direction: column;
+                gap: 4px;
+
+                .job-role {
+                    width: 100%;
+                    font-size: 36px;
+                    font-weight: bold;
+                    text-transform: uppercase;
+                }
+
+                .job-details {
+                    width: 100%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    gap: 12px;
+                    font-size: large;
+                    letter-spacing: 1.5px;
+
+                    a {
+                        display: flex;
+                        align-items: center;
+                        gap: 8px;
+                        transition: all 0.3s ease-in-out;
+                        border-radius: 4px;
+                        text-transform: uppercase;
+                        position: relative;
+
+                        .line {
+                            width: 24px;
+                            height: 3px;
+                            position: absolute;
+                            bottom: -30%;
+                            left: 50%;
+                            border-radius: 8px;
+                            transform: translateX(-50%);
+                            background-color: white;
+                            transition: all 0.3s ease-in-out;
+                            box-shadow: 0 0 40px 2px white;
+                        }
+
+                        &:hover {
+                            transform: translateY(-2px);
+                        }
+
+                        &:hover .line {
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+
+            .skills-section {
+                width: 100%;
+                display: flex;
+                align-items: flex-start;
+                justify-content: flex-start;
+                gap: 12px;
+
+                .skill {
+                    display: flex;
+                    align-items: center;
+                    flex-direction: column;
+                    gap: 4px;
+                    font-size: medium;
+                    font-weight: bold;
+                    padding: 8px 16px;
+                    transition: all 0.3s ease-in-out;
+
+                    .line {
+                        width: 100%;
+                        height: 2px;
+                        background-color: lime;
+                        border-radius: 8px;
+                        box-shadow: 0 0 40px 4px lime;
+                    }
+
+                    &:hover {
+                        transform: translateY(-5px);
+                    }
+                }
+            }
+
+            .responsibilities-section {
+                width: 100%;
+                display: flex;
+                align-items: flex-start;
+                justify-content: flex-start;
+                flex-direction: column;
+                gap: 12px;
+                font-size: 14.5px;
+                line-height: 180%;
+                letter-spacing: 1.2px;
+                padding: 0 24px;
+            }
+        }
+    }
+}
+
 .projects-container {
     width: 100%;
     height: 90%;
