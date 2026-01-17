@@ -1,6 +1,5 @@
 'use client';
 
-import Image from 'next/image';
 import { PROJECTS } from '../constants';
 import { useState } from 'react';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
@@ -28,34 +27,26 @@ export default function ProjectsPage() {
                     </div>
 
                     <div className="project-links">
-                        {project.github && (
-                            <a
-                                href={project.github}
-                                target="_blank"
-                                className="neon"
-                            >
-                                GitHub
-                            </a>
-                        )}
-
-                        {project.live && (
-                            <a
-                                href={project.live}
-                                target="_blank"
-                                className="neon"
-                            >
-                                Live Demo
-                            </a>
-                        )}
+                        <a
+                            href={project.github}
+                            target="_blank"
+                            className="neon"
+                        >
+                            GitHub
+                        </a>
                     </div>
                 </div>
 
                 <div className="project-thumbnail">
-                    <Image
-                        src={project.thumbnail}
-                        alt="Project thumbnail"
-                        width={400}
-                        height={250}
+                    <video
+                        src={project.live}
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
+                        preload="metadata"
+                        className="project-video"
+                        controls
                     />
                 </div>
             </div>

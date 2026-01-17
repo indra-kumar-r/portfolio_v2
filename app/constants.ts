@@ -63,7 +63,7 @@ export const PROJECTS = [
     {
         title: 'LinkedIn Profile Scraper App',
         description:
-            'A full-stack tool for executing Boolean search queries on LinkedIn profiles with exportable results.',
+            'A full-stack end-to-end recruitment automation tool that transforms complex LinkedIn searches into structured, searchable candidate data in minutes, eliminating manual sourcing and accelerating the entire hiring workflow.',
         skills: ['Go', 'Angular', 'MongoDB', 'SerpAPI'],
         highlights: [
             'Built a modular microservices backend with SerpAPI integration.',
@@ -71,9 +71,7 @@ export const PROJECTS = [
             'Enabled exporting of scraped profile data.',
         ],
         github: 'https://github.com/indra-kumar-r/LinkedIn-Profile-Scraper-App',
-        live: '',
-        thumbnail:
-            'https://images.pexels.com/photos/34613733/pexels-photo-34613733.jpeg',
+        live: 'scrapy.mp4',
     },
     {
         title: 'Invoice Web App',
@@ -86,9 +84,7 @@ export const PROJECTS = [
             'Improved invoice creation workflow efficiency.',
         ],
         github: 'https://github.com/indra-kumar-r/Invoice-WebApp',
-        live: '',
-        thumbnail:
-            'https://images.pexels.com/photos/29678804/pexels-photo-29678804.jpeg',
+        live: 'scrapy.mp4',
     },
 ];
 
