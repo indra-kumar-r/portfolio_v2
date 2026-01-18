@@ -1,7 +1,10 @@
+'use client;';
+
 import type { Metadata } from 'next';
 import './globals.css';
 import Navbar from './components/Navbar';
 import { VERSION } from './constants';
+import Image from 'next/image';
 
 export const metadata: Metadata = {
     title: 'INDRA KUMAR R',
@@ -16,11 +19,31 @@ export default function RootLayout({
     return (
         <html lang="en">
             <body>
-                <Navbar />
+                <div className="main-container">
+                    <Navbar />
+                    {children}
+                    <div className="footer-container">{VERSION.version}</div>
+                </div>
 
-                {children}
+                <div className="screen-blocker">
+                    <div className="blocker-card">
+                        <Image
+                            height={200}
+                            width={200}
+                            src="/blocker.png"
+                            alt="logo"
+                        />
 
-                <div className="footer-container">{VERSION.version}</div>
+                        <div className="info">
+                            Please view on a laptop/desktop for a beter user
+                            experience.
+                        </div>
+
+                        <div className="sub-info marquee-left">
+                            v2 coming soon! In development.
+                        </div>
+                    </div>
+                </div>
             </body>
         </html>
     );
