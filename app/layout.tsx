@@ -35,7 +35,7 @@ export default function RootLayout({
                         />
 
                         <div className="info">
-                            Please view on a laptop/desktop for a beter user
+                            Please view on a laptop/desktop for a better user
                             experience.
                         </div>
 
