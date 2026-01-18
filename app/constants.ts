@@ -104,5 +104,5 @@ export const NAV_TABS = [
 ];
 
 export const VERSION = {
-    version: 'v1.0.1',
+    version: 'v1.1.2',
 };
