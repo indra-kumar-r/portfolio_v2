@@ -76,7 +76,7 @@ export const PROJECTS = [
     {
         title: 'Invoice Web App',
         description:
-            'A web-based invoice management system to streamline invoice creation and client management.',
+            'A full-stack web-based invoice management system designed to simplify invoice creation and management for small businesses, turning a slow, manual process into a fast, organized, and reliable digital workflow.',
         skills: ['Angular', 'Node.js', 'Express.js', 'MongoDB', 'Redis'],
         highlights: [
             'Implemented persistent invoice and client data storage.',
@@ -84,7 +84,7 @@ export const PROJECTS = [
             'Improved invoice creation workflow efficiency.',
         ],
         github: 'https://github.com/indra-kumar-r/Invoice-WebApp',
-        live: 'scrapy.mp4',
+        live: 'invoice.mp4',
     },
 ];
 
