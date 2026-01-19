@@ -6,7 +6,7 @@ export const ABOUT = {
     socials: {
         linkedin: 'https://www.linkedin.com/in/indra-kumar-r/',
         github: 'https://github.com/indra-kumar-r',
-        resume: 'https://drive.google.com/file/d/1BfHWFxOJuUw6GthluoX-lRG7v5NzcAtE/view',
+        resume: 'INDRA_KUMAR_R_RESUME.pdf',
     },
     contact: {
         email: 'indra07kumar@gmail.com',
