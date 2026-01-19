@@ -32,6 +32,7 @@ export default function RootLayout({
                             width={200}
                             src="/blocker.png"
                             alt="logo"
+                            className="blocker-image"
                         />
 
                         <div className="info">
@@ -39,8 +40,11 @@ export default function RootLayout({
                             experience.
                         </div>
 
-                        <div className="sub-info marquee-left">
-                            v2 coming soon! In development.
+                        <div className="sub-info">v2 coming soon with:</div>
+
+                        <div className="progress-info">
+                            <div className="chip">Mobile version</div>
+                            <div className="chip">Animations</div>
                         </div>
                     </div>
                 </div>
